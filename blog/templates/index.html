@@ -17,7 +17,9 @@
 				</h2>
 			</a>
 			<br>
+		{% autoescape off %}
 			{{ article.content }}
+		{% endautoescape %}
 			<br><br>
 			<p class="post-meta">Created by <a href="#">{{ article.author }}</a> on {{ article.created }}</p>
 		</div>
