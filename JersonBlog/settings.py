@@ -176,15 +176,14 @@ assert len(SECRET_KEY) > 20, 'Please set SECRET_KEY in local_settings.py'
 
 #TinyMCE configuration
 
-TINYMCE_JS_URL = os.path.join(MEDIA_URL, "path/to/tiny_mce/tiny_mce.js")
-TINYMCE_JS_ROOT = os.path.join(MEDIA_ROOT, "path/to/tiny_mce")
 TINYMCE_DEFAULT_CONFIG = {
-    'plugins': "table,spellchecker,paste,searchreplace,emoticons,link",
-	'menubar':"insert",
-	'toolbar':"link",
-    'theme':"advanced",
-    'cleanup_on_startup':True,
-    'custom_undo_redo_levels':10,
+    'theme' : 'advanced',
+    'theme_advanced_buttons1' : 'bold,italic,underline,separator,bullist,numlist,separator,link,unlink',
+    'theme_advanced_buttons2' : '',
+    'theme_advanced_buttons3' : '',
+    'theme_advanced_toolbar_location' : 'top',
+    'theme_advanced_toolbar_align': 'left',
+    'paste_text_sticky': True,
+    'paste_text_sticky_default' : True,
+    'valid_styles' : 'font-weight,font-style,text-decoration',
 }
-TINYMCE_SPELLCHECKER = True
-TINYMCE_COMPRESSOR = True
