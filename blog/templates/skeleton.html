@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'head_stuff.html' %}
+<body>
+
+	{% include 'navbar.html' %}
+	
+	{% block header_image %}{% endblock %}
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					<div class="site-heading">
+						<h1>ChillSpot</h1>
+						<hr class="small">
+						<span class="subheading">Interesting topics for interesting people</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	{% block content %}{% endblock %}
+    {% include 'footer.html' %}
+	{% include 'js_stuff.html' %}
+  </body>
+</html>
