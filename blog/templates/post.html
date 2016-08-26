@@ -1,0 +1,31 @@
+{% extends 'skeleton.html' %}
+{% load staticfiles %}
+
+{% block header_image %}
+<header class="intro-header" style="background-image: url('{{ article.image.url }}')">
+{% endblock %}
+
+{% block header_content %}
+<div class="post-heading">
+	<h1>{{ article.title }}</h1>
+	<span class="meta">Created by <a href="#">{{ article.author }}</a> on {{ article.created }}</span>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Main Content -->
+<article>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				{% autoescape off %}
+					{{ article.content }}
+				{% endautoescape %}
+			</div>
+		</div>
+	</div>
+</article>
+
+<hr>
+
+{% endblock %}

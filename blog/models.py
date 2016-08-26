@@ -20,6 +20,7 @@ class Article(models.Model):
 	created = models.DateTimeField(auto_now_add=True)
 	status = models.IntegerField(choices=STATUS_CHOICES, default=2)
 	content = tinymce_models.HTMLField()
+	description = tinymce_models.HTMLField()
 	image = models.ImageField()
 	
 	def __unicode__(self):

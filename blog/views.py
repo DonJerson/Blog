@@ -13,3 +13,10 @@ def index(request):
 	'articles':articles
 	}
 	return render(request, 'index.html', block)
+	
+def single_post(request, article_id):
+	article = Article.objects.get(id=article_id)
+	block = {
+	'article':article
+	}
+	return render(request, 'post.html', block)

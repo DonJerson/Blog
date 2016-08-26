@@ -5,25 +5,33 @@
 <header class="intro-header" style="background-image: url('{% static "startbootstrap/img/philosophy.jpg" %}')">
 {% endblock %}
 
+{% block header_content %}
+	<div class="site-heading">
+		<h1>ChillSpot</h1>
+		<hr class="small">
+		<span class="subheading">Interesting topics for interesting people</span>
+	</div>
+{% endblock %}
+
 {% block content %}
 <!-- Main Content -->
 <div class="row">
 	<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 	{% for article in articles %}
 		<div class="post-preview">
-			<a href="post.html">
+			<a href="{% url 'blog:single_post' article.id %}">
 				<h2 class="post-title">
 					{{ article.title }}
 				</h2>
 			</a>
-			<br>
+
 		{% autoescape off %}
-			{{ article.content }}
+			{{ article.description }}
 		{% endautoescape %}
-			<br><br>
 			<p class="post-meta">Created by <a href="#">{{ article.author }}</a> on {{ article.created }}</p>
 		</div>
 		<hr>
+		<br>
 	{% endfor %}
 	</div>
 </div>
